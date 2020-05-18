@@ -1,0 +1,102 @@
+Q1.) Write a program to get a user input in the form of a list data type. Return a list by removing all the duplicates. Sample Input -> [4, 4, 5, 6, 8, 4, 5] Output -> [4, 5, 6, 8] NOTE: Take user input using a for loop.
+
+ANSWER :-
+def Remove(duplicate): 
+    take = [] 
+    for num in duplicate: 
+        if num not in take: 
+            take.append(num) 
+    return take 
+duplicate = [5,6,4,23,5,7,3,4,3,4] 
+print(Remove(duplicate))
+
+OUTPUT:-[5, 6, 4, 23, 7, 3]
+
+
+Q2.) Write a program to create a user defined tuple with ‘int’ data type and perform the following operations: Find the length of tuples Find the sum of all the elements of a tuple Find the largest and smallest elements of a tuple
+
+ANSWER :-
+user = (1, 2, 3)
+print(user)
+
+# Length of tuple
+print("1. Tuple length :", len(user))
+
+# # Sum of tuple
+print ("2. Max value element : ", sum(user))
+
+# # Largest and smallest 
+print("3. Largest in tuple :", min(user))
+print("4. Smallest in tuple :",max(user))
+
+OUTPUT:-(1, 2, 3)
+1. Tuple length : 3
+2. Max value element :  6
+3. Largest in tuple : 1
+4. Smallest in tuple : 3
+
+Q3.) Given a number and ith bit, change the ith bit of that number to 1. Sample Input -> num = 13, i = 1 Output -> 15 Explanation -> 13 can be represented as 1101 in binary. Now if we set the 1st bit of this binary represented value, we will get 1111 (i.e. 15) as output.
+
+ANSWER:-
+def setKthBit(n,i):
+    return ((1 << i) | n)
+n = 13 
+i = 1
+print("Output Number is = ", 
+          setKthBit(n, i))
+OUTPUT:- Output Number is =  15
+
+Q4.) Given a number, print 1 if the number is odd otherwise print 0. NOTE: Try to do this program without the use of if else statement.
+
+ANSWER:-
+n = ["Even", "Odd"] 
+print ("Enter the number") 
+n1 = input() 
+print (n[int(n1) % 2])
+OUTPUT:-Enter the number
+23
+Odd
+ 
+Q5.) Given two lists of integers A and B. Write a program to merge them into a single sorted list that contains every item from list A and B in ascending order.
+
+ANSWER:-
+def sortedMerge(a, b, res, n, m): 
+    i, j, k = 0, 0, 0
+    while (i < n): 
+        res[k] = a[i] 
+        i += 1
+        k += 1
+    while (j < m): 
+        res[k] = b[j] 
+        j += 1
+        k += 1
+    res.sort() 
+a = [ 10, 5, 15 ] 
+b = [ 20, 3, 2, 12 ] 
+n = len(a) 
+m = len(b) 
+res = [0 for i in range(n + m)] 
+sortedMerge(a, b, res, n, m) 
+print ("Sorted merged list :")
+for i in range(n + m): 
+    print (res[i])
+OUTPUT:- Sorted merged list :
+2
+3
+5
+10
+12
+15
+20
+
+Q6.) Create a user defined dictionary to store names and marks of 5 students. Sort the dictionary according to marks and return this sorted dictionary to the user. Sample Input -> {'Berlin': 70, 'Oslo':0, 'Moscow':50, 'Nairobi':100} Output -> {'Oslo':0, 'Moscow':50, 'Berlin': 70, 'Nairobi':100}
+
+ANSWER:-
+a1 = {'Berlin': 70, 'Oslo':0, 'Moscow':50, 'Nairobi':100}
+a1_sorted_keys = sorted(a1, key=a1.get, reverse=False)
+for r in a1_sorted_keys:
+    print ((r, a1[r]))
+OUTPUT:-('Oslo', 0)
+('Moscow', 50)
+('Berlin', 70)
+('Nairobi', 100)
